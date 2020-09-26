@@ -8,7 +8,7 @@ package br.digital.house.desafioKotlin
 // quantMaximaDeAlunos: Int
 // listaDeAlunos: MutableList<Aluno>
 
-data class Curso(
+class Curso(
         var nome: String,
         val codigoDeCurso: Int,
         val professorTitular: ProfessorTitular,
@@ -20,5 +20,6 @@ data class Curso(
     override fun equals(other: Any?): Boolean = (other is Curso) && codigoDeCurso == other.codigoDeCurso
 
     // Reconstruição do ToString
-    override fun toString(): String = "Curso: $nome -- codigoDeCurso: $codigoDeCurso"
+    override fun toString(): String = "\nCurso: $nome -- codigoDeCurso: $codigoDeCurso \n-- Prof.Titular: $professorTitular\n-- Prof.Adjunto: $professorAdjunto\nlistaDeAlunos: $listaDeAlunos\n"
+
 }

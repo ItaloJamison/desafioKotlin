@@ -14,5 +14,5 @@ data class Matricula(
     var data = Date()
 
     // Reconstruição do ToString
-    override fun toString(): String = "${aluno} \n ${curso} \n Data: $data"
+    override fun toString(): String = "${aluno} ${curso} \nData: $data"
 }
