@@ -3,9 +3,18 @@ package br.digital.house.desafioKotlin
 // Data class contendo as informações:
 // nome: String
 // codigoDeCurso: Int
+// professorTitular: ProfessorTitular
+// professorAdjunto: ProfessorAdjunto
+// quantMaximaDeAlunos: Int
+// listaDeAlunos: MutableList<Aluno>
+
 data class Curso(
         var nome: String,
-        val codigoDeCurso: Int
+        val codigoDeCurso: Int,
+        val professorTitular: ProfessorTitular,
+        val professorAdjunto: ProfessorAdjunto,
+        val quantMaximaDeAlunos: Int,
+        val listaDeAlunos: MutableList<Aluno>
 ){
     // Um curso será igual a outro se seus codigoDealuno forem iguais
     override fun equals(other: Any?): Boolean = (other is Curso) && codigoDeCurso == other.codigoDeCurso
