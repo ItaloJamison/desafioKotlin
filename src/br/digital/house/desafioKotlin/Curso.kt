@@ -1,6 +1,8 @@
 package br.digital.house.desafioKotlin
 
-// Data class contendo as informações: nome: String e codigoDeCurso: Int
+// Data class contendo as informações:
+// nome: String
+// codigoDeCurso: Int
 data class Curso(
         var nome: String,
         val codigoDeCurso: Int
