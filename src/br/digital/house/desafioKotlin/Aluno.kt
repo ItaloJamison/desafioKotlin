@@ -4,6 +4,7 @@ package br.digital.house.desafioKotlin
 // nome: String
 // sobrenome: String
 // codigoDeAluno: Int
+
 data class Aluno(
         var nome: String,
         var sobrenome: String,
