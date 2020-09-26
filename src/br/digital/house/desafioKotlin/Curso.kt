@@ -22,4 +22,9 @@ class Curso(
     // Reconstruição do ToString
     override fun toString(): String = "\nCurso: $nome -- codigoDeCurso: $codigoDeCurso \n-- Prof.Titular: $professorTitular\n-- Prof.Adjunto: $professorAdjunto\nlistaDeAlunos: $listaDeAlunos\n"
 
+   // permite adicionar um aluno à lista
+   // O método retornará true se o aluno puder ser adicionado ou false caso não haja vagas disponíveis.
+    fun adicionarUmAluno(umAluno: Aluno): Boolean = if (quantMaximaDeAlunos>= listaDeAlunos.size) listaDeAlunos.add(umAluno) else false
+
+    fun excluirAluno(umAluno: Aluno) =  listaDeAlunos.remove(umAluno)
 }

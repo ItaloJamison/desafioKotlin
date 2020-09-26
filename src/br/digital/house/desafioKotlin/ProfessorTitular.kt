@@ -21,6 +21,6 @@ class ProfessorTitular(
 ){
 
     // Reconstruição do ToString
-    override fun toString(): String = "${super.toString()} -- -- especialidade: $especialidade"
+    override fun toString(): String = "${super.toString()} -- especialidade: $especialidade"
 
 }

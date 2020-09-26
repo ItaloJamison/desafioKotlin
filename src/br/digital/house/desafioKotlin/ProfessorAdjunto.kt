@@ -21,6 +21,6 @@ class ProfessorAdjunto(
 ){
 
     // Reconstruição do ToString
-    override fun toString(): String = "${super.toString()} -- Quantidade de Horas: Monitoria: $quantHorasMonitoria"
+    override fun toString(): String = "${super.toString()} -- Quantidade de Horas da Monitoria: $quantHorasMonitoria"
 
 }
