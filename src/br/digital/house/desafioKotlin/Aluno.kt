@@ -1,6 +1,9 @@
 package br.digital.house.desafioKotlin
 
-// Data class contendo as informações: nome: String,sobrenome: String e codigoDeAluno: Int
+// Data class contendo as informações:
+// nome: String
+// sobrenome: String
+// codigoDeAluno: Int
 data class Aluno(
         var nome: String,
         var sobrenome: String,

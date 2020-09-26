@@ -9,5 +9,5 @@ data class Curso(
     override fun equals(other: Any?): Boolean = (other is Curso) && codigoDeCurso == other.codigoDeCurso
 
     // Reconstruição do ToString
-    override fun toString(): String = "Curso: $nome -- codigoDeCurso: $codigoDeAluno"
+    override fun toString(): String = "Curso: $nome -- codigoDeCurso: $codigoDeCurso"
 }

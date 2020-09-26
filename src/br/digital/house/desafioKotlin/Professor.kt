@@ -1,6 +1,10 @@
 package br.digital.house.desafioKotlin
 
-// Data class contendo as informações: nome: String,sobrenome: String e codigoDeAluno: Int
+// abstract class contendo as informações:
+// nome: String
+// sobrenome: String
+// codigoDeProfessor: Int
+// tempoDeCasa: Int
 abstract class Professor(
         open var nome: String,
         open var sobrenome: String,

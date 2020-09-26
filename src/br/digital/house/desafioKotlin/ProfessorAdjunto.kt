@@ -5,13 +5,13 @@ package br.digital.house.desafioKotlin
 // sobrenome: String
 // codigoDeProfessor: Int
 // tempoDeCasa: Int
-// especialidade: String
-class ProfessorTitular(
+// quantHorasMonitoria: Int
+class ProfessorAdjunto(
         nome: String,
         sobrenome: String,
         codigoDeProfessor: Int,
         tempoDeCasa: Int,
-        val especialidade: String
+        val quantHorasMonitoria: Int
 ):Professor(
         nome,
         sobrenome,
@@ -20,6 +20,6 @@ class ProfessorTitular(
 ){
 
     // Reconstruição do ToString
-    override fun toString(): String = "${super.toString()} -- -- especialidade: $especialidade"
+    override fun toString(): String = "${super.toString()} -- Quantidade de Horas: Monitoria: $quantHorasMonitoria"
 
 }
