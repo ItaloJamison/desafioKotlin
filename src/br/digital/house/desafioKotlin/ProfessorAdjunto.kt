@@ -6,6 +6,7 @@ package br.digital.house.desafioKotlin
 // codigoDeProfessor: Int
 // tempoDeCasa: Int
 // quantHorasMonitoria: Int
+
 class ProfessorAdjunto(
         nome: String,
         sobrenome: String,

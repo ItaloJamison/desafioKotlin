@@ -5,6 +5,7 @@ package br.digital.house.desafioKotlin
 // sobrenome: String
 // codigoDeProfessor: Int
 // tempoDeCasa: Int
+
 abstract class Professor(
         open var nome: String,
         open var sobrenome: String,

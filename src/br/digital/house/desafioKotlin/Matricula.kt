@@ -5,6 +5,7 @@ import java.util.*
 // Data class contendo as informações:
 // aluno: Aluno
 // curso: Curso
+
 data class Matricula(
         var aluno: Aluno,
         var curso: Curso,
