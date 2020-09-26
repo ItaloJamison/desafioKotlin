@@ -16,5 +16,5 @@ abstract class Professor(
     override fun equals(other: Any?): Boolean = (other is Aluno) && codigoDeProfessor == other.codigoDeAluno
 
     // Reconstruição do ToString
-    override fun toString(): String = "Professor: $nome $sobrenome -- CodigoDeAluno: $codigoDeProfessor -- TempoDeCasa: $tempoDeCasa"
+    override fun toString(): String = "\nProfessor: $nome $sobrenome -- codigoDeProfessor: $codigoDeProfessor -- TempoDeCasa: $tempoDeCasa"
 }
