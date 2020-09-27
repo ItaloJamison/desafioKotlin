@@ -12,13 +12,16 @@ class ProfessorTitular(
         sobrenome: String,
         codigoDeProfessor: Int,
         tempoDeCasa: Int,
-        val especialidade: String
+        private var especialidade: String
 ):Professor(
         nome,
         sobrenome,
         codigoDeProfessor,
         tempoDeCasa
 ){
+    init {
+        println(toString())
+    }
 
     // Reconstruição do ToString
     override fun toString(): String = "${super.toString()} -- especialidade: $especialidade"
