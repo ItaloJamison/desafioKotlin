@@ -42,7 +42,8 @@ fun main(){
     digitalHouseManager.matricularAluno(2,20002)
     digitalHouseManager.matricularAluno(4,20002)
     digitalHouseManager.matricularAluno(5,20002)
-
+    //ResultadoFinal
+    println("--------------------------------------------------")
     println(digitalHouseManager)
 
 
