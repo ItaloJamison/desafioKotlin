@@ -88,5 +88,5 @@ class DigitalHouseManager{
             println("Alocação não realizada: Curso não encontrado")
     }
 
-    override fun toString(): String = "\n$listaDeCursos"
+    override fun toString(): String = "\n$listaDeCursos \n$listaDeMatriculas"
 }
