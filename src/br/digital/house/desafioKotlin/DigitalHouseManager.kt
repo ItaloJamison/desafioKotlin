@@ -41,51 +41,35 @@ class DigitalHouseManager{
     // O método recebe como parâmetros:
     // o código do aluno e o código do curso em que ele está se matriculando.
     fun matricularAluno(codigoAluno: Int, codigoCurso: Int){
-        var achouAluno = false
-        var tinhaVaga = false
-        listaDeAlunos.forEach{
-            aluno-> if(aluno.equals(codigoAluno)){
-                achouAluno = true
-                listaDeCursos.forEach{
-                    curso -> if(curso.equals(codigoCurso)){
-                        if(curso.adicionarUmAluno(aluno)){
-                                tinhaVaga = true
-                                listaDeMatriculas.add(Matricula(aluno,curso))
-                                println("Matricula Realizada com sucesso")
-                        }
-                        if(!tinhaVaga)
-                            println("Matricula não realizada: Sem vaga")
-                    }
-                }
+        try {
+            var findAluno = listaDeAlunos.find {aluno -> aluno.equals(codigoAluno)}
+            var findCurso = listaDeCursos.find{curso -> curso.equals(codigoCurso)}
+            if(findCurso!!.adicionarUmAluno(findAluno!!)){
+                listaDeMatriculas.add(Matricula(findAluno,findCurso))
+                println("Matricula Realizada com sucesso")
             }
+            else{
+                println("Matricula Não Realizada:Sem vaga")
+            }
+        }catch(e: NullPointerException) {
+            println("Matricula Não Realizada")
         }
-        if(!achouAluno)
-            println("Matricula não realizada: Aluno não encontrado")
     }
 
     // Permite alocar professores a um curso.
     // O método recebe como parâmetros:
     // O código do curso, o código do professor titular e o código do professor adjunto
     fun alocarProfessores(codigoCurso: Int, codigoProfessorTitular: Int, codigoProfessorAdjunto: Int){
-        var achou = false
-        listaDeCursos.forEach{
-            curso-> if(curso.equals(codigoCurso)){
-                listaDeProfessores.forEach{
-                    professorTitular -> if(professorTitular.equals(codigoProfessorTitular) && professorTitular is ProfessorTitular){
-                        listaDeProfessores.forEach{
-                            professorAdjunto-> if(professorAdjunto.equals(codigoProfessorAdjunto) && professorAdjunto is ProfessorAdjunto) {
-                                achou = true
-                                curso.professorTitular = professorTitular
-                                curso.professorAdjunto = professorAdjunto
-                                println("Alocação realizada com sucesso")
-                            }//else println("Alocação não realizada: Um dos professores não encontrados")
-                        }
-                    }
-                }
-            }
+        try{
+            var findCurso = listaDeCursos.find{curso -> curso.equals(codigoCurso)}
+            var findProfessorTitular = listaDeProfessores.find{professorTitular ->  (professorTitular.equals(codigoProfessorTitular) && professorTitular is ProfessorTitular)}
+            var findProfessorAdjunto = listaDeProfessores.find{professorAdjunto ->  (professorAdjunto.equals(codigoProfessorAdjunto) && professorAdjunto is ProfessorAdjunto)}
+            findCurso!!.professorTitular = (findProfessorTitular as ProfessorTitular?)!!
+            findCurso.professorAdjunto = (findProfessorAdjunto as ProfessorAdjunto?)!!
+            println("Alocação realizada com sucesso")
+        }catch(e: NullPointerException){
+            println("Alocação não realizada")
         }
-        if(!achou)
-            println("Alocação não realizada: Curso não encontrado")
     }
 
     override fun toString(): String = "\n$listaDeCursos \n$listaDeMatriculas"
