@@ -8,10 +8,10 @@ package br.digital.house.desafioKotlin
 
 class DigitalHouseManager{
 
-    val listaDeAlunos = mutableListOf<Aluno>()
-    val listaDeProfessores = mutableListOf<Professor>()
-    val listaDeCursos = mutableListOf<Curso>()
-    val listaDeMatriculas = mutableListOf<Matricula>()
+    private val listaDeAlunos = mutableListOf<Aluno>()
+    private val listaDeProfessores = mutableListOf<Professor>()
+    private val listaDeCursos = mutableListOf<Curso>()
+    private val listaDeMatriculas = mutableListOf<Matricula>()
 
     // Permite registrar um curso.
     // O método recebe como parâmetros o nome do curso, o código e a quantidade máxima de alunos admitidos.
@@ -42,8 +42,8 @@ class DigitalHouseManager{
     // o código do aluno e o código do curso em que ele está se matriculando.
     fun matricularAluno(codigoAluno: Int, codigoCurso: Int){
         try {
-            var findAluno = listaDeAlunos.find {aluno -> aluno.equals(codigoAluno)}
-            var findCurso = listaDeCursos.find{curso -> curso.equals(codigoCurso)}
+            val findAluno = listaDeAlunos.find{aluno -> aluno.equals(codigoAluno)}
+            val findCurso = listaDeCursos.find{curso -> curso.equals(codigoCurso)}
             if(findCurso!!.adicionarUmAluno(findAluno!!)){
                 listaDeMatriculas.add(Matricula(findAluno,findCurso))
                 println("Matricula Realizada com sucesso")
@@ -61,9 +61,9 @@ class DigitalHouseManager{
     // O código do curso, o código do professor titular e o código do professor adjunto
     fun alocarProfessores(codigoCurso: Int, codigoProfessorTitular: Int, codigoProfessorAdjunto: Int){
         try{
-            var findCurso = listaDeCursos.find{curso -> curso.equals(codigoCurso)}
-            var findProfessorTitular = listaDeProfessores.find{professorTitular ->  (professorTitular.equals(codigoProfessorTitular) && professorTitular is ProfessorTitular)}
-            var findProfessorAdjunto = listaDeProfessores.find{professorAdjunto ->  (professorAdjunto.equals(codigoProfessorAdjunto) && professorAdjunto is ProfessorAdjunto)}
+            val findCurso = listaDeCursos.find{curso -> curso.equals(codigoCurso)}
+            val findProfessorTitular = listaDeProfessores.find{professorTitular ->  (professorTitular.equals(codigoProfessorTitular) && professorTitular is ProfessorTitular)}
+            val findProfessorAdjunto = listaDeProfessores.find{professorAdjunto ->  (professorAdjunto.equals(codigoProfessorAdjunto) && professorAdjunto is ProfessorAdjunto)}
             findCurso!!.professorTitular = (findProfessorTitular as ProfessorTitular?)!!
             findCurso.professorAdjunto = (findProfessorAdjunto as ProfessorAdjunto?)!!
             println("Alocação realizada com sucesso")

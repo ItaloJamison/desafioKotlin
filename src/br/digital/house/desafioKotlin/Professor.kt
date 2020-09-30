@@ -17,4 +17,8 @@ abstract class Professor(
 
     // Reconstruição do ToString
     override fun toString(): String = "\nProfessor: $nome $sobrenome -- codigoDeProfessor: $codigoDeProfessor -- TempoDeCasa: $tempoDeCasa"
+
+    override fun hashCode(): Int {
+        return super.hashCode()
+    }
 }

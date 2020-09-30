@@ -15,4 +15,8 @@ data class Aluno(
 
     // Reconstruição do ToString
     override fun toString(): String = "\nAluno: $nome $sobrenome -- CodigoDeAluno: $codigoDeAluno"
+
+    override fun hashCode(): Int {
+        return super.hashCode()
+    }
 }
